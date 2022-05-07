@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css" />
+    <link rel="stylesheet" type="text/css" href="./css/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bangers&display=swap" rel="stylesheet">
+    <title>Dynamic Memes</title>
+
+</head>
+
+<header>
+    <nav class="navbar navbar-light bg-light color-change">
+        <img src="./images/520pxu.png" width="80" height="80"><span class="navbar-brand mb-0 h1 font-size"
+            id="project-title">Dynamic M3mes</span>
+    </nav>
+</header>
+<div class="hero"></div>
+
+<body>
+    <main class="container justify-content-center align-items-center w-100%" id="grid-container">
+        <div class="main row">
+            <aside class="searchable justify-content-center">
+                <section class="meme p-3">
+                    <h2>Search Memes</h2>
+                    <div class="search-data">
+                        <datalist id="searches" class="previous-searches"></datalist>
+                        <input type="text" class="texts" placeholder="Search . ." list="searches">
+                        <input type="submit" class="button" id="search-meme">
+                    </div>
+                    <div class="generate">
+                        <button class="random-btn" id="random-btn">Generate Random Image</button><br>
+                        <input class="random-btn" type="button" id="loadFileXml" value="Upload Your Own Image"
+                            onclick="document.getElementById('file').click();" />
+                        <input type="file" style="display:none;" id="file" name="file" />
+                    </div>
+                    <div class="create-your-own">
+                        <label>
+                            <h2>Top Text</h2>
+                        </label><br>
+                        <input type="text" id="topTextInput">
+                        <br>
+                        <label>
+                            <h2>Bottom Text</h2>
+                        </label><br>
+                        <input type="text" id="bottomTextInput">
+                    </div>
+                </section>
+            </aside>
+            <div class="randomized col-7 justify-content-center">
+                <section class="meme-search" id="random">
+                    <div class="card shadow m-3">
+                        <div class="card-body flex row justify-content-center" id="giphy-display">
+                        </div>
+                    </div>
+                </section>
+                <section class="meme justify-content-center" id="generator">
+                    <div class="card shadow m-3">
+                        <div class="card-body flex row justify-content-center" id="giphy-display">
+                            <h2 class="final col-7"><p>Display Your Meme</p></h2>
+                            <canvas id="meme"></canvas>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </main>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script type="text/javascript" src="./js/javascript.js"></script>
+</body>
+
+</html>
